@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="C:\Users\Vitor Levi\OneDrive\Documentos\JavaScript\JavaScript\Aula04\estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div id="numero">
+            <p>Número</p>
+            <input type="number" name="numeroS" id="numeroS" min="0">
+            
+            <p>Mostrar Tabuada
+                <input type="button" value="calc" onclick="mostrarTabuada()">
+            </p>
+        </div>
+
+        <div>
+            <select name="tabuada" id="selTab" size="10">
+                <option >Digite um valor acima</option>
+            </select>
+            <p id="Resultado"></p>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+    <script src="tabuada.js"></script>
+</body>
+</html>
