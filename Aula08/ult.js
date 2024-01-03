@@ -1,12 +1,9 @@
-var valor = parseInt(document.getElementById('numeros').value)
-var sele = document.getElementById('selTab')
-var resultContainer = document.getElementById('Resultado')
 var array = []       
 
-
 function adicionarValores(){
- 
-    
+    var valor = parseInt(document.getElementById('numeros').value)
+    var sele = document.getElementById('selTab')
+    var item = document.createElement('option')
             item.text = `O valor ${valor} foi adicionado`
                 array.push(valor)
                 sele.appendChild(item)
@@ -15,18 +12,17 @@ function adicionarValores(){
             
 }
 
-function finalizar(arr) {
+function finalizar() {
 
-    recebeArray()
     // tamanho do vetor
-    var tamanho = arr.length
+    var tamanho = array.length
     // maior valor 
-    var maiorValor = Math.max(arr)
+    var maiorValor = Math.max(array)
     // menor valor
-    var menorValor = Math.min(arr)
+    var menorValor = Math.min(array)
     //soma dos valores
-    for (let index = 0; index < arr.length; index++) {
-        var soma =+ arr[index]
+    for (var index = 0; index < array.length; index++) {
+        var soma = soma + array[index]
     }
     //media dos valoresR
     var media = soma / tamanho
@@ -37,7 +33,7 @@ function finalizar(arr) {
     Somando tudo temos: ${soma} <br>
     A media é de: ${media}`
 
-    
+    var resultContainer = document.getElementById('Resultado')
     resultContainer.innerHTML = resultados;
    
 }
