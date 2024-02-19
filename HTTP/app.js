@@ -1,27 +1,23 @@
-const express = require("express")
+const express = require('express');
 const app = express();
-const hand = require('express-handlebars')
+const handlebars = require('express-handlebars');
+
+app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 
     //INDETIFICAÇÕES DO BANCO
-const Sequelize = require ('sequelize')
-const sequelize = new Sequelize('cadastro','root','',{
+    const Sequelize = require ('sequelize')
+    const sequelize = new Sequelize('cadastro','root','',{
     host: "localhost",
     dialect: 'mysql'
 })
-
-//config
-    //template end
-    app.engine('hand',handlebars({defaultLayout: 'main'}))
-    app.set('view engine', 'handlebars')
 
 app.listen(8081, function servidor() {
     console.log("Servidor rodando")
 })
 
-app.get("/",function rota(req,res) {
-    res.sendFile(__dirname + "/templates/index.html")
-})
+
 /*
 app.get("/login",function rota(req,res) {
     res.sendFile(__dirname + "/templates/login.html")
